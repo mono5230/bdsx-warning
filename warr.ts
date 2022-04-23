@@ -38,7 +38,7 @@ events.packetAfter(MinecraftPacketIds.Login).on((ev, ni) => {
     !fs.existsSync(UserJSON) ? fs.writeFileSync(UserJSON, JSON.stringify(Save)) : null;
     const read = JSON.parse(fs.readFileSync(UserJSON, "utf8"))
 
-    if (read.warning >= 5) {
+    if (read.warning >= warningban) {
         bedrockServer.serverInstance.disconnectClient(ni, BanTitle)
     }
 })
