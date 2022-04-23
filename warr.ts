@@ -109,10 +109,17 @@ command.register("경고차감", "플레이어의 경고를 차감 시킵니다.
                 deletewarning = { deviceId: player.deviceId, playerName: player.getName(), warning: read.warning - params.WarningScore }
                 fs.writeFileSync(UserJSON, JSON.stringify(deletewarning))
 
+                const read1 = JSON.parse(fs.readFileSync(UserJSON, "utf8"))
+
                 if (read.warning < 0) {
                     let reCreate = {};
                     reCreate = { deviceId: player.deviceId, playerName: params.target, warning: 0 }
                     fs.writeFileSync(UserJSON, JSON.stringify(reCreate))
+
+                    bedrockServer.executeCommand(`tellraw "${params.WarningPlayer.getName()}" {"rawtext":[{"text":"§l§d[ §fServer §d] §r: 당신의 경고가 ${params.WarningScore}차감 되었습니다! §c현재 경고 수: §f( ${read1.warning}/${warningban} )"}]}`)
+                    bedrockServer.executeCommand(`tellraw "${actor.getName()}" {"rawtext":[{"text":"§l§d[ §fServer §d] §r: 해당 유저의 경고가 마이너스이기때문에 0으로 바꿨습니다! §c해당 유저의 현재 경고 수: §f( ${read1.warning}/${warningban} )"}]}`)
+                } else {
+                    bedrockServer.executeCommand(`tellraw "${params.WarningPlayer.getName()}" {"rawtext":[{"text":"§l§d[ §fServer §d] §r: 당신의 경고가 ${params.WarningScore}차감 되었습니다! §c현재 경고 수: §f( ${read1.warning}/${warningban} )"}]}`)
                 }
             }
         }
