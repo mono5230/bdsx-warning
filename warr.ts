@@ -7,7 +7,7 @@
 // who gave feedback: mono
 // Created by: mumyung (https://omlet.gg/profile/mumyung1507)
 
-import { ActorCommandSelector, CommandPermissionLevel, PlayerCommandSelector } from "bdsx/bds/command";
+import { ActorCommandSelector, CommandPermissionLevel } from "bdsx/bds/command";
 import { MinecraftPacketIds } from "bdsx/bds/packetids";
 import { ServerPlayer } from "bdsx/bds/player";
 import { command } from "bdsx/command";
