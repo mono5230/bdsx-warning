@@ -59,7 +59,7 @@ command.register("경고", "플레이어에게 경고를 줍니다.", CommandPer
 
                 const read1 = JSON.parse(fs.readFileSync(UserJSON, "utf8"));
 
-                if (read1.warning >= 5) {
+                if (read1.warning >= warningban) {
                     bedrockServer.serverInstance.disconnectClient(ni, BanTitle)
                 }
 
