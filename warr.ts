@@ -1,9 +1,7 @@
 // 본 플러그인은 MIT 라이센스가 있습니다.
-// 피드백 해준사람: 모노
 // 만든사람: mumyung (https://omlet.gg/profile/mumyung1507)
 
 // This plugin is licensed under MIT.
-// who gave feedback: mono
 // Created by: mumyung (https://omlet.gg/profile/mumyung1507)
 
 import { ActorCommandSelector, CommandPermissionLevel } from "bdsx/bds/command";
