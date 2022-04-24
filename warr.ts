@@ -1,3 +1,4 @@
+//.
 // 본 플러그인은 MIT 라이센스가 있습니다.
 // 만든사람: mumyung (https://omlet.gg/profile/mumyung1507)
 
