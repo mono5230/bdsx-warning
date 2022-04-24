@@ -114,7 +114,7 @@ command.register("경고차감", "플레이어의 경고를 차감 시킵니다.
     
                     const read1 = JSON.parse(fs.readFileSync(UserJSON, "utf8"))
 
-                    if (read.warning < 0) {
+                    if (read1.warning < 0) {
                         let reCreate = {};
                         reCreate = { deviceId: player.deviceId, playerName: params.target, warning: 0 }
                         fs.writeFileSync(UserJSON, JSON.stringify(reCreate))
